@@ -24,6 +24,11 @@ class LoginViewController: UIViewController {
         setButtonActions()
     }
     
+    // 화면의 빈곳을 터치한 경우에 키보드를 내리는 코드
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     // MARK: - Set Button Actions
     // 워크북 2주차
     private func setButtonActions() {

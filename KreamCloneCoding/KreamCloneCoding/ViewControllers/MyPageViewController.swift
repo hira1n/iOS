@@ -39,5 +39,6 @@ class MyPageViewController: UIViewController {
          지금 self(MyPageViewController)에 navigationController가 있다면
          pushViewController방식으로 화면 전환
          */
+        
     }
 }

@@ -39,7 +39,7 @@ class LoginView: UIView {
         let tf = UITextField()
         tf.placeholder = "예) kream@kream.co.kr" // 플레이스홀더 (사용자가 textField에 타이핑을 하기 전 나타나는 문구)
         tf.font = .systemFont(ofSize: 12, weight: .regular)
-        tf.keyboardType = .emailAddress // 키보드 타입을 이메일로 바꾸는 코드 (여러가지 애플이 만들어 놓은 키보드 모드가 있음, 필수는 아님)
+        
         tf.layer.cornerRadius = 15 // 코너 둥글게
         tf.layer.borderWidth = 1 // 외각선
         tf.layer.borderColor = UIColor.lightGray.cgColor // 외각선 색상
@@ -50,6 +50,12 @@ class LoginView: UIView {
         tf.leftView = leftView
         tf.leftViewMode = .always
         
+        tf.autocapitalizationType = .none // 첫 글자 자동 대문자 끔
+        tf.autocorrectionType = .no // 추천 글자 표시 끔
+        tf.spellCheckingType = .no // 오류(오타)난 글자 표시 끔
+        tf.keyboardType = .emailAddress // 키보드 타입을 이메일로 바꾸는 코드 (여러가지 애플이 만들어 놓은 키보드 모드가 있음, 필수는 아님)
+        tf.returnKeyType = .done // return버튼 타입
+        tf.clearsOnBeginEditing = false // textField편집시 기존 textField값 제거 끔 (기본이 false)
         
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf

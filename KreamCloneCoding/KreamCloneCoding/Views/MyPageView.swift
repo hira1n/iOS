@@ -103,6 +103,13 @@ class MyPageView: UIView {
         sv.distribution = .fillEqually
         return sv
     }()
+    
+    // 
+    let emptyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -112,6 +119,7 @@ class MyPageView: UIView {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         /*
          하위 뷰의 크기가 결정되는 시점 함수
          애플이 만들어놓은 함수
@@ -134,6 +142,7 @@ class MyPageView: UIView {
         self.addSubview(profileImageView)
         self.addSubview(labelStackView)
         self.addSubview(buttonStackView)
+        self.addSubview(emptyView)
         
         setupConstraints()
     }
@@ -183,6 +192,12 @@ class MyPageView: UIView {
         buttonStackView.snp.makeConstraints { make in
             make.top.equalTo(profileImageView.snp.bottom).offset(26)
             make.leading.trailing.equalToSuperview().inset(32.5)
+        }
+        
+        emptyView.snp.makeConstraints { make in
+            make.top.equalTo(buttonStackView.snp.bottom).offset(29)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
     }
 }
