@@ -51,6 +51,9 @@ class ManageProfileViewController: UIViewController {
         self.title = "프로필 관리"
         self.navigationController?.navigationBar.tintColor = .black
         
+        /*
+         네비바 커스텀은 스스로 구글링 하여 공부하는 것을 추천드립니다.
+         */
         let backButtonImage = UIImage(systemName: "arrow.left")
         self.navigationController?.navigationBar.backIndicatorImage = backButtonImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
